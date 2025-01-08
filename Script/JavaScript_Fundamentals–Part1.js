@@ -127,26 +127,26 @@ let avg2;
 
 
 function checkGroup(scoreGroup1, scoreGroup2) {
-    if(scoreGroup1 > scoreGroup2) {
+    if (scoreGroup1 > scoreGroup2) {
         console.log("Đội cá heo dành chiến thắng")
-        if(scoreGroup1 > 100) {
-            console.log("Đội cá heo đạt phần thưởng 1") 
+        if (scoreGroup1 > 100) {
+            console.log("Đội cá heo đạt phần thưởng 1")
         } else {
-            console.log("Đội cá chưa đạt phần thưởng 1") 
+            console.log("Đội cá chưa đạt phần thưởng 1")
         }
     } else if (scoreGroup1 === scoreGroup2) {
         console.log("Hai đội hòa nhau");
     } else {
-        console.log("Đội gấu túi dành chiến thắng") 
-        if(scoreGroup2 > 100) {
-            console.log("Đội gấu túi đạt phần thưởng 1") 
+        console.log("Đội gấu túi dành chiến thắng")
+        if (scoreGroup2 > 100) {
+            console.log("Đội gấu túi đạt phần thưởng 1")
         } else {
-            console.log("Đội gấu túi chưa đạt phần thưởng 1") 
+            console.log("Đội gấu túi chưa đạt phần thưởng 1")
         }
     }
 }
 
-if(true) {
+if (true) {
     console.log("Dữ liệu 1");
     sum1 = data1Group1.reduce((pre, currentValue) => pre + currentValue);
     avg1 = sum1 / data1Group1.length
@@ -158,25 +158,25 @@ if(true) {
     console.log("Điểm trung bình của đội gấu túi: " + avg2);
 
     checkGroup(avg1, avg2)
-}   
+}
 
 console.log("\n");
-if(true) {
+if (true) {
     console.log("Dữ liệu 2");
     sum1 = data2Group1.reduce((pre, currentValue) => pre + currentValue);
     avg1 = sum1 / data2Group1.length
     console.log("Điểm trung bình của đội cá heo: " + avg1);
 
     sum2 = data2Group2.reduce((pre, currentValue) => pre + currentValue);
-    avg2 = sum2 / data2Group1.length 
+    avg2 = sum2 / data2Group1.length
     console.log("Điểm trung bình của đội gấu túi: " + avg2);
 
 
     checkGroup(avg1, avg2)
-}   
+}
 
 console.log("\n");
-if(true) {
+if (true) {
     console.log("Dữ liệu 3");
     sum1 = data3Group1.reduce((pre, currentValue) => pre + currentValue);
     avg1 = sum1 / data3Group1.length
@@ -185,6 +185,26 @@ if(true) {
     sum2 = data3Group2.reduce((pre, currentValue) => pre + currentValue);
     avg2 = sum2 / data3Group1.length
     console.log("Điểm trung bình của đội gấu túi: " + avg2);
-    
+
     checkGroup(avg1, avg2)
-}   
+}
+
+console.log("\n");
+console.log("--------------------------------------------------------------------------------------");
+console.log("Coding Challenge #4");
+console.log("\n");
+
+const dataMoney = [275, 40, 430];
+
+const checkTip = dataMoney.every((money) => {
+    return money >= 50 && money <= 300;
+})
+
+const totalMoney = dataMoney.reduce((sum, money) => sum + money);
+let moneyTip = totalMoney;
+
+moneyTip = checkTip ? moneyTip * 0.15 : moneyTip * 0.2;
+
+checkTip ? console.log("Đạt số phần trăm tiền tip là 15%") : console.log("Đạt số phần trăm tiền tip là 20%");
+
+console.log("Tổng tiền: " + totalMoney + " và đạt dược số tiền tip là: " + moneyTip);  
