@@ -1,5 +1,5 @@
 (function () {
-    console.log("Coding Challenge #1");
+    console.log("----------------------- Coding Challenge #1 ---------------------------");
 
     //Dữ liệu
     const data1Group1 = [44, 23, 71];
@@ -45,6 +45,38 @@
         console.log("Không có đội nào thắng");
     }
 
+    console.log("----------------------- Coding Challenge #2 ---------------------------");
+    // Dữ liệu
+    const bills1 = [125, 555, 44];
+    const tips = [15, 20]
+    const arrTotalResult = [];
+    var totalBill;
 
-    console.log("----------------------------------------------------------------");
+    const calcTip = (arr) => {
+        let checkTip;
+
+        checkTip = arr.every(val => val >= 50 && val <= 300);
+
+        var totalArr = arr.reduce((totalBill, currentValue) => totalBill + currentValue);
+
+        if (checkTip) {
+            console.log("Phần trăm tiền tiếp đó là: " + tips[0] + "%");
+            totalBill = totalArr * tips[0] / 100;
+
+        } else {
+            console.log("Phần trăm tiền tiếp đó là: " + tips[1] + "%");
+            totalBill = totalArr * tips[1] / 100;
+        }
+
+        console.log("Tổng tiền mỗi hóa đơn: " + totalBill);
+        totalBill = totalArr;
+    }
+
+    //Gọi hàm tính tiền 
+    calcTip(bills1);
+
+    arrTotalResult.push(totalBill)
+    console.log("Mảng kết quả: [" + arrTotalResult + "]");
+
+
 })();
