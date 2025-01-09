@@ -85,5 +85,46 @@
 
     console.log("----------------------- Coding Challenge #3 ---------------------------");
     // Dữ liệu
+    const arrInfo = [{
+            name: "Mark",
+            height: 78,
+            weight: 1.69
+        },
+        {
+            name: "John",
+            height: 92,
+            weight: 1.95
+        },
+        {
+            name: "Anh",
+            height: 99,
+            weight: 1.95
+        }
+    ]
+    var resultBMI = [];
+
+    const calcBMI = (arr) => {
+        let bmi;
+        arr.forEach((val) => {
+            bmi = val.weight / (val.height * val.height);
+            resultBMI.push({ name: val.name, bmi });
+        });
+    }
+
+    // Gọi lại hàm
+    calcBMI(arrInfo);
+
+    console.log("Danh sách kết quả");
+    console.log(resultBMI);
+
+    let highestBMI = resultBMI[0];
+
+    resultBMI.forEach(person => {
+        if (person.bmi > highestBMI.bmi) {
+            highestBMI = person;
+        }
+    });
+
+    console.log(highestBMI.name + " có chỉ số BMI cao nhất");
 
 })();
