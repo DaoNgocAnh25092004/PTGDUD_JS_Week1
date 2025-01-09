@@ -127,4 +127,25 @@
 
     console.log(highestBMI.name + " có chỉ số BMI cao nhất");
 
+    console.log("----------------------- Coding Challenge #4 ---------------------------");
+    // Dữ liệu
+    const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+    const arrInfoBill = [];
+
+    const calcTipBill = (arr) => {
+        let tip;
+        let totalBill;
+
+        arr.forEach((val) => {
+            tip = val >= 50 && val <= 300 ? val * 0.15 : val * 0.20;
+            totalBill = val + tip;
+            arrInfoBill.push({ bill: val, tip, totalBill });
+        });
+    }
+
+    // Gọi làm hàm
+    calcTipBill(bills);
+    console.log("Danh sách kết quả");
+    console.log(arrInfoBill);
+
 })();
